@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2021_08_17_232248) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "facts", force: :cascade do |t|
-    t.integer "member_id", null: false
+    t.bigint "member_id", null: false
     t.string "fact_text"
     t.integer "likes"
     t.datetime "created_at", precision: 6, null: false
